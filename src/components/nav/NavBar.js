@@ -1,4 +1,5 @@
 import React from "react"
+import { useHistory } from "react-router-dom"
 import { Link } from "react-router-dom"
 import "./NavBar.css"
 
@@ -7,10 +8,10 @@ export const NavBar = () => {
     return (
         <ul className="navbar">
             <li className="navbar__item">
-                Navigation link
+                <Link className="nav-link" to="/games">Games</Link>
             </li>
             <li className="navbar__item">
-                Navigation link
+                <Link className="nav-link" to="/events">Events</Link>
             </li>
             <li className="navbar__item">
                 Navigation link
