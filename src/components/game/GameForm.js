@@ -6,7 +6,6 @@ import { createGame, getGameTypes } from './GameManager.js'
 export const GameForm = () => {
     const history = useHistory()
     const [gameTypes, setGameTypes] = useState([])
-
     /*
         Since the input fields are bound to the values of
         the properties of this state variable, you need to
@@ -21,13 +20,12 @@ export const GameForm = () => {
     })
 
     useEffect(() => {
-        getGameTypes()
-        .then(data => setGameTypes(data))
+        getGameTypes().then(data => setGameTypes(data))
     }, [])
 
     // Handling a change on any one of your inputs
     const changeGameState = (domEvent) => {
-        let gameCopy = {...currentGame}
+        let gameCopy = Object.assign({}, currentGame)
         // Bracket notation - at the moment it changes, look at input and use string to change state
         gameCopy[domEvent.target.name] = domEvent.target.value 
         setCurrentGame(gameCopy)
@@ -94,7 +92,6 @@ export const GameForm = () => {
                 onClick={evt => {
                     // Prevent form from being submitted
                     evt.preventDefault()
-
                     const game = {
                         maker: currentGame.maker,
                         title: currentGame.title,

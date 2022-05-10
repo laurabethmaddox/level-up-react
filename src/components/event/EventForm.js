@@ -20,7 +20,7 @@ export const EventForm = () => {
     }, [])
 
     const changeEventState = (domEvt) => {
-        let eventCopy = {...currentEvent}
+        let eventCopy = Object.assign({}, currentEvent)
         eventCopy[domEvt.target.name] = domEvt.target.value
         setCurrentEvent(eventCopy)
     }

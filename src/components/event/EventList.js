@@ -30,6 +30,9 @@ export const EventList = (props) => {
                             <div className="event_organizer">
                                 Hosted by {event.organizer.user.username}
                             </div>
+                            <button onClick={() => {
+                                history.push(`events/edit/${event.id}`)
+                            }}>Edit</button>
                         </section>
                     )
                 })
